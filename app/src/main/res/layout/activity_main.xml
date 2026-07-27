@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEF7FF"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- Top Header -->
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:alpha="0.7"
+            android:text="Welcome to,"
+            android:textAppearance="?attr/textAppearanceLabelLarge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Balance Display Card -->
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="My Mobile Bank"
+            android:textAppearance="?attr/textAppearanceHeadlineMedium"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvGreeting" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="93dp"
+            android:layout_height="87dp"
+            android:background="#FEF7FF"
+            android:padding="8dp"
+            android:src="@drawable/bank"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tvTitle"
+            app:layout_constraintTop_toTopOf="@id/tvGreeting"
+            app:layout_constraintVertical_bias="0.428"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/balanceCard"
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="?attr/colorPrimary"
+            app:cardCornerRadius="28dp"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Available Balance"
+                    android:textAppearance="?attr/textAppearanceLabelMedium"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:alpha="0.8" />
+
+                <TextView
+                    android:id="@+id/tvBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="$20.00"
+                    android:textAppearance="?attr/textAppearanceDisplaySmall"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="**** **** **** 4290"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:alpha="0.7"
+                    android:letterSpacing="0.2" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Input Section Label -->
+        <TextView
+            android:id="@+id/labelTransfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Quick Transfer"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/balanceCard"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilAmount"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Amount to Move"
+            app:prefixText="$"
+            app:placeholderText="0.00"
+            app:layout_constraintTop_toBottomOf="@id/labelTransfer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:id="@+id/layoutActions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tilAmount">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDeposit"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:text="Deposit"
+                app:icon="@android:drawable/ic_input_add"
+                app:cornerRadius="16dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnWithdraw"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:text="Withdraw"
+                app:icon="@android:drawable/ic_delete"
+                app:cornerRadius="16dp" />
+        </LinearLayout>
+
+        <!-- Recent Activity Section -->
+        <TextView
+            android:id="@+id/labelRecent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Recent Activity"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/layoutActions"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/historyCard"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="?attr/colorSurfaceContainerLow"
+            app:layout_constraintTop_toBottomOf="@id/labelRecent"
+            tools:layout_editor_absoluteX="24dp">
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbars="vertical">
+                <LinearLayout
+                    android:id="@+id/transactionContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:isScrollContainer="true"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- This text shows when list is empty -->
+
+                    <TextView
+                        android:id="@+id/tvEmptyState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:alpha="0.5"
+                        android:text="No recent transactions"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:verticalScrollbarPosition="defaultPosition" />
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="32dp"
+            android:layout_height="22dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="@+id/labelRecent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.981"
+            app:layout_constraintStart_toEndOf="@+id/labelRecent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutActions"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/delete" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

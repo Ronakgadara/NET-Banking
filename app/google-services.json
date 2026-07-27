@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "634790383890",
+    "project_id": "net-bank49",
+    "storage_bucket": "net-bank49.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634790383890:android:724b7bfe4d0a52ba0963cb",
+        "android_client_info": {
+          "package_name": "com.example.net_banking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6nWMRlpetrnPookIm6UQ1vPzceoO8hUg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
